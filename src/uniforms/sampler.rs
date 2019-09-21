@@ -14,9 +14,6 @@ pub enum SamplerWrapFunction {
 
     /// Samples at coord `x + 1` map to coord `1`.
     Clamp,
-    
-    /// Use texture border.
-    BorderClamp,
 
     /// Same as Mirror, but only for one repetition,
     MirrorClamp
@@ -29,7 +26,6 @@ impl ToGlEnum for SamplerWrapFunction {
             SamplerWrapFunction::Repeat => gl::REPEAT,
             SamplerWrapFunction::Mirror => gl::MIRRORED_REPEAT,
             SamplerWrapFunction::Clamp => gl::CLAMP_TO_EDGE,
-            SamplerWrapFunction::BorderClamp => gl::CLAMP_TO_BORDER,
             SamplerWrapFunction::MirrorClamp => gl::MIRROR_CLAMP_TO_EDGE,
         }
     }
